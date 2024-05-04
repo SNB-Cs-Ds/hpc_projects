@@ -13,12 +13,12 @@ This repository contains codes, slurms and report for implementing parallel quic
 The source codes for strong and weak scalling experiments are available [here](https://github.com/behrooz/FHPC-units/blob/main/report.pdf).
 
 ## Usage:
-1. Compile the code with MPI support (`mpicc mpi-strong-qsort.c -o mpi-strong-qsort.x`).
-2. Run the executable with desired number of MPI processes (`mpirun -np <num_processes> ./mpi-strong-qsort.x`).
+1. Compile the code with MPI support (`mpicc mpi-strong-quicksort.c -o mpi-strong-quicksort.x`).
+2. Run the executable with desired number of MPI processes (`mpirun -np <num_processes> ./mpi-strong-quicksort.x`).
 3. View the execution time in seconds for sorting the dataset.
 
 ## Example:
-To sort a dataset of size 100,000 using 4 MPI processes: `mpirun -np 4 ./mpi-strong-qsort.x`.
+To sort a dataset of size 100,000 using 4 MPI processes: `mpirun -np 4 ./mpi-strong-quicksort.x`.
 
 ## Slurm:
 The slurm for strong and weak scalling experiments are available [here](https://github.com/behrooz/FHPC-units/blob/main/report.pdf).
