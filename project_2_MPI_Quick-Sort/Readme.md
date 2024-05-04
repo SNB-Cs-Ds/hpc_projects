@@ -24,8 +24,8 @@ To sort a dataset of size 100,000 using 4 MPI processes: `mpirun -np 4 ./mpi-str
 
 ## Slurm:
 The slurm for strong and weak scalling experiments are available 
-[here](https://github.com/SNB-Cs-Ds/hpc_projects/blob/main/project_2_MPI_Quick-Sort/slurm-omp-strong-mandelbort.job) and
-[here](https://github.com/SNB-Cs-Ds/hpc_projects/blob/main/project_2_MPI_Quick-Sort/slurm-omp-weak-mandelbort.job).
+[here](https://github.com/SNB-Cs-Ds/hpc_projects/blob/main/project_2_MPI_Quick-Sort/slurm-mpi-strong-qsort.job) and
+[here](https://github.com/SNB-Cs-Ds/hpc_projects/blob/main/project_2_MPI_Quick-Sort/slurm-mpi-weak-qsort.job).
 
 ## Report:
 The detailed report on the implementation and performance analysis can be found 
