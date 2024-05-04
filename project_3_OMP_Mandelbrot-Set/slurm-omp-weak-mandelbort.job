@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --job-name=omp-weak-mandelbort.set
+#SBATCH --partition=EPYC
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=128
+#SBATCH --mem=490G
+#SBATCH --time=01:00:00
+
+module load openMPI/4.1.5/gnu/12.2.1
+
+cd /u/dssc/nbehrooz/proj3/
+
+gcc -fopenmp omp-weak-mandelbrot.c -o omp-weak-mandelbrot.x -lm
+
+for threads in 2 4 6 8 10 12 14 16 20 22 24 32 48 64 72 86 100 112 120 128; do
+    # Calculate the new dimensions based on the number of processes
+    dimensions=$((threads * 256))
+
+    # Run the program with the updated dimensions
+    OMP_NUM_THREADS=$threads ./omp-weak-mandelbrot.x $dimensions 256 -2.75 -2 1.25 2 255
+done
