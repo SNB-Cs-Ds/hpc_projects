@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --job-name=mpistrongscalability.qsort
+#SBATCH --partition=EPYC
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=128
+#SBATCH --mem=490G
+#SBATCH --time=02:00:00
+
+module load openMPI/4.1.5/gnu/12.2.1
+
+cd /u/dssc/nbehrooz/proj2/
+
+
+mpicc mpi-strong-qsort.c -o mpi-strong-qsort.x
+
+for np in 2 4 6 8 10 16 24 32 64 72 96 104 112 128; do
+    mpirun -np $np ./mpi-strong-qsort.x
+done
