@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --job-name=osu_benchmark
+#SBATCH --partition=EPYC
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=128
+#SBATCH --mem=490G
+#SBATCH --time=02:00:00
+
+module load openMPI/4.1.5/gnu/12.2.1
+module load openBLAS/0.3.23-omp
+
+cd /u/dssc/nbehrooz/proj1/osu-micro-benchmarks-7.3/c/mpi/collective/blocking
+
+## Loop over different numbers of processes
+for np in 2 4 8 16 32 64 128 256; do
+    total_np=$np
+
+    mpirun -np $total_np --mca coll_tuned_use_dynamic_rules true --mca coll_tuned_scatter_algorithm 0 osu_bcast
+done
