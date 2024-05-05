@@ -30,11 +30,12 @@ Before running the benchmarks, ensure that you have downloaded and compiled the 
 
 https://mvapich.cse.ohio-state.edu/benchmarks/ 
 
-More detailed instruction about compilation can be found
+More detailed instruction about compilation can be found:
 
 [here] https://mvapich.cse.ohio-state.edu/static/media/mvapich/README-OMB.txt
 
-for example, after downloading OSU benchmark
+for example, after downloading OSU benchmark:
+
 ./configure --prefix=/u/dssc/nbehrooz/proj1/osu-micro-benchmarks-7.3
 
 CC=/opt/programs/openMPI/4.1.5/bin/mpicc CXX=/opt/programs/openMPI/4.1.5/bin/mpicxx
@@ -61,14 +62,14 @@ mpirun --mca coll_tuned_use_dynamic_rules true --mca coll_tuned_bcast_algorithm 
 ## Slurm:
 The slurm for OSU benchmark Bcast and Scatter operations are available, respectively:
 
-[here](https://github.com/SNB-Cs-Ds/hpc_projects/blob/main/project_1_OSU_Benchmark/slurm_osu_bcast.job) and
+https://github.com/SNB-Cs-Ds/hpc_projects/blob/main/project_1_OSU_Benchmark/slurm_osu_bcast.job
 
-[here](https://github.com/SNB-Cs-Ds/hpc_projects/blob/main/project_1_OSU_Benchmark/slurm_osu_scatter.job).
+https://github.com/SNB-Cs-Ds/hpc_projects/blob/main/project_1_OSU_Benchmark/slurm_osu_scatter.job
 
 ## Report:
 The detailed report on the implementation and performance analysis can be found 
 
-[here](https://github.com/SNB-Cs-Ds/hpc_projects/blob/main/project_1_OSU_Benchmark/report_proj1.pdf).
+https://github.com/SNB-Cs-Ds/hpc_projects/blob/main/project_1_OSU_Benchmark/report_proj1.pdf
 
 ## Contributors:
 - [Nooshin Behrooz]
